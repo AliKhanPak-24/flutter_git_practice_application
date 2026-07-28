@@ -1,1 +1,3 @@
-class TestGit {}
+class TestGit {
+  int some = 11;
+}
