@@ -50,6 +50,7 @@ class MyHomePage extends StatelessWidget {
             ElevatedButton(onPressed: () {}, child: Text("Settings")),
             ElevatedButton(onPressed: () {}, child: Text("Profile")),
             ElevatedButton(onPressed: () {}, child: Text("Login")),
+            ElevatedButton(onPressed: () {}, child: Text("Detail")),
           ],
         ),
       ),
