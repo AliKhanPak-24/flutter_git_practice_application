@@ -10,6 +10,11 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text("Login Screen"),
+      ],
+    );
   }
 }
