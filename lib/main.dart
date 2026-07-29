@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'controllers/counter_controller.dart';
+import 'features/home/home_view.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -13,52 +13,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  MyHomePage({super.key, required this.title});
-  final String title;
-
-  final CounterController controller = Get.put(CounterController());
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('You have pushed the button this many times:'),
-            Obx(
-              () => Text(
-                '${controller.counter.value}',
-                style: Theme.of(context).textTheme.headlineMedium,
-              ),
-            ),
-            ElevatedButton(onPressed: () {}, child: Text("Settings")),
-            ElevatedButton(onPressed: () {}, child: Text("Profile")),
-            ElevatedButton(onPressed: () {}, child: Text("Login")),
-            ElevatedButton(onPressed: () {}, child: Text("Detail")),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: controller.increment,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      home: const HomeView(title: 'Flutter Demo Home Page'),
     );
   }
 }
