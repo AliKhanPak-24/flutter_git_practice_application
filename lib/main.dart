@@ -47,6 +47,7 @@ class MyHomePage extends StatelessWidget {
                 style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
+            ElevatedButton(onPressed: () {}, child: Text("Profile")),
             ElevatedButton(onPressed: () {}, child: Text("Login")),
           ],
         ),
